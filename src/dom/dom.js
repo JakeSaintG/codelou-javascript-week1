@@ -14,7 +14,11 @@ class DomSuite {
      */
     appendParagraphToBody() {
         // Implement your solution below this line
-
+            let body = document.getElementsByTagName('body')[0];
+            let p = document.createElement('p');
+            p.id = 'paragraph-1';
+            p.innerText = `Javascript is great!`;
+            body.appendChild(p);
         // Implement your solution above this line
     }
 
@@ -25,7 +29,8 @@ class DomSuite {
     updateParagraphText() {
         this.appendParagraphToBody();
         // Implement your solution below this line
-        
+            let pChange = document.getElementsByTagName('p')[0];
+            pChange.innerText = 'Typescript is great!';
         // Implement your solution above this line
     }
 

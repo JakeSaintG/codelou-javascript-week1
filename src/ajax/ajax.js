@@ -31,8 +31,18 @@ class AjaxSuite {
      * @param {String} name 
      */
     wordSearch(name) {
-        // Implement your solution below this line
-        
+        // Implement your solution below this line        
+            const baseUrl = 'https://pokeapi.co/api/v2/pokemon/mudkip';
+            return new Promise((any) => {
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = () => {
+                    if(xhr.readyState === 4) {
+                        any(xhr.responseText)
+                    }
+                }
+                xhr.open('GET', `${baseUrl}${name}`)
+                xhr.send();
+            });
         // Implement your solution above this line
     }
 
